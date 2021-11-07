@@ -3,7 +3,7 @@ import circleFragShader from '../shaders/circle.frag'
 import { initWebGL, resizeGl } from '../lib/webGL'
 
 // Create Shape with DrawArrays
-const createShapeA = (gl: WebGL2RenderingContext, program: WebGLProgram) => {
+export const createShapeA = (gl: WebGL2RenderingContext, program: WebGLProgram) => {
     const vertices = new Float32Array([
         // eslint-disable-next-line prettier/prettier
         -1, 1,

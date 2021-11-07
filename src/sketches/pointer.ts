@@ -2,7 +2,6 @@ import { id2rgb, rgb2id } from '../lib/idConvertor'
 import { YapiGL } from '../lib/webGL'
 import { pushItems } from '../utils/pushItem'
 import Tooltip from '../utils/tooltip'
-import Color from 'color'
 
 const VSHADER_SOURCE = /* glsl */ `
 attribute vec4 position;
@@ -35,6 +34,14 @@ const getRandomColor = () => {
     return colors[i]
 }
 
+const hex2rgb = (hex: string) => {
+    const text = hex.replace('#', '')
+    const r = text.substr(0, 2)
+    const g = text.substr(2, 2)
+    const b = text.substr(4, 2)
+    return [r, g, b].map((d) => parseInt(d, 16))
+}
+
 const data: {
     x: number
     y: number
@@ -48,7 +55,7 @@ for (let i = 0; i < 100; i++) {
     data.push({
         x: (Math.random() - 0.5) * 2,
         y: (Math.random() - 0.5) * 2,
-        color: Color(color).rgb().array(),
+        color: hex2rgb(color),
         id: i + 1,
         msg: color,
     })
