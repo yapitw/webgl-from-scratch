@@ -1,7 +1,7 @@
 import { id2rgb, rgb2id } from '../lib/idConvertor'
 import { YapiGL } from '../lib/webGL'
 import { pushItems } from '../utils/pushItem'
-import Tooltip from '../utils/tooltip'
+import Tooltip from '../utils/Tooltip'
 
 const VSHADER_SOURCE = /* glsl */ `
 attribute vec4 position;
