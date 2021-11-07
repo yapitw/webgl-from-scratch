@@ -84,7 +84,7 @@ export class YapiGL {
     }
 
     clear = (color?: [r: number, g: number, b: number, a?: number]) => {
-        const [r = 0, g = 0, b = 0, a = 1] = color ?? []
+        const [r = 0, g = 0, b = 0, a = 0] = color ?? []
         const gl = this.gl
         gl.clearColor(r, g, b, a)
         gl.clear(gl.COLOR_BUFFER_BIT)
